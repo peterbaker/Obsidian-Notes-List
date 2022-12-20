@@ -17,7 +17,8 @@ pages.forEach(function(page) {
 		
 		// Get File Meta
 		var fileName = page.file.name;
-		var fileDate = moment(page.file.mtime.toString()).fromNow();
+		var fileTime = moment(page.file.ctime.toString()).format('LT'); // 3:52 PM
+		var fileDate = moment(page.file.ctime.toString()).fromNow();
 		var filePath = app.vault.getAbstractFileByPath(page.file.path);
 		var filePathName = filePath.name;
 		var fileOutlinks = page.file.outlinks;
